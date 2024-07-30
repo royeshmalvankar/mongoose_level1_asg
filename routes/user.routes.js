@@ -8,7 +8,7 @@ userRoutes.post("/", async(req, res) => {
     try {
        let UserAuth = await User.find({name:req.body.name,email:req.body.email, password:req.body.password}) 
        if(UserAuth.length!=0){
-        res.send("user already exists")
+        res.send({"message":"user already exists"})
         return
        }
       let user = new User(req.body)
