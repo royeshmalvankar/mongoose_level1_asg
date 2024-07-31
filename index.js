@@ -2,6 +2,8 @@ const express = require("express")
 const mongoose = require("mongoose")
 const userRoutes = require("./routes/user.routes")
 const productRoutes = require("./routes/products.routes")
+
+
 const app = express()
 const ltserver = 3001
 
