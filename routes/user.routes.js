@@ -1,12 +1,13 @@
 const express = require("express")
 const User = require("../schema/user.schema")
 
+
 const userRoutes = express.Router()
 
 
 userRoutes.post("/", async(req, res) => {
     try {
-       let UserAuth = await User.find({name:req.body.name,email:req.body.email, password:req.body.password}) 
+       let UserAuth = await User.find({email:req.body.email}) 
        if(UserAuth.length!=0){
         res.send({"message":"user already exists"})
         return
